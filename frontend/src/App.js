@@ -4,9 +4,7 @@ import "./assets/style.css"
 
 function App() {
   return (
-    <div class="container">
-      <Router />
-    </div>
+    <Router />
   );
 }
 

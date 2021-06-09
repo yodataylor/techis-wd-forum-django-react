@@ -2,9 +2,9 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 
 
-class Tweet(models.Model):
+class Post(models.Model):
     class Meta(object):
-        db_table = 'tweet'
+        db_table = 'post'
 
     name = models.CharField(
         'Name', blank=False, null=False, max_length=14, db_index=True, default='Anonymous'

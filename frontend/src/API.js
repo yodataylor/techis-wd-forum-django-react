@@ -15,62 +15,35 @@ const api = axios.create({
 });
 
 export default class API {
-    getTweets = async () => {
-        const tweets = await api
-            .get("/tweets/")
+    getPosts = async () => {
+        const posts = await api
+            .get("/posts/")
             .then((response) => {
                 return response.data
             })
             .catch((error) => {
                 throw new Error(error)
             })
-        return tweets
+        return posts
     }
-    getTweet = async (id) => {
-        const tweet = await api
-            .get("/tweets/" + id + "/")
-            .then((response) => {
-                return response.data
-            })
-            .catch((error) => {
-                throw new Error(error)
-            })
-        return tweet
-    }
-    addTweet = async (name, body, image) => {
+    addPost = async (name, body, image) => {
         const formData = new FormData();
         formData.append("name", name);
         formData.append("body", body);
         formData.append("image", image);
-        const savedTweet = await axios 
-            .post(baseURL + "/tweets/add/", formData)
+        const savedPost = await axios 
+            .post(baseURL + "/posts/add/", formData)
             .then((response) => {
                 return response.data
             })
             .catch((error) => {
                 throw new Error(error)
             })
-        return savedTweet
+        return savedPost
     }
-    updateTweet = async (id, name, body, image) => {
-        const formData = new FormData();
-        formData.append("id", id);
-        formData.append("name", name);
-        formData.append("body", body);
-        formData.append("image", image);
-        const updatedTweet = await axios 
-            .put(baseURL + "/tweets/" + id + "/", formData)
-            .then((response) => {
-                return response.data
-            })
-            .catch((error) => {
-                throw new Error(error)
-            })
-        return updatedTweet
-    }
-    deleteTweet = async (id) => {
+    deletePost = async (id) => {
         const response = await api
-            .delete("/tweets/delete/" + id + "/")
+            .delete("/posts/delete/" + id + "/")
             .then((response) => {
                 return response.data
             })
@@ -78,27 +51,5 @@ export default class API {
                 throw new Error(error)
             })
         return response
-    }
-    likeAddTweet = async (id) => {
-        const tweet = await api
-            .get("/tweets/likes/add/" + id + "/")
-            .then((response) => {
-                return response.data
-            })
-            .catch((error) => {
-                throw new Error(error)
-            })
-        return tweet
-    }
-    likeSubtractTweet = async (id) => {
-        const tweet = await api
-            .get("/tweets/likes/subtract/" + id + "/")
-            .then((response) => {
-                return response.data
-            })
-            .catch((error) => {
-                throw new Error(error)
-            })
-        return tweet
     }
 }

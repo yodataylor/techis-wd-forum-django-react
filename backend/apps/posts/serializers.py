@@ -1,10 +1,10 @@
-from .models import Tweet
+from .models import Post
 from rest_framework import serializers
 
 
-class TweetSerializer(serializers.ModelSerializer):
+class PostSerializer(serializers.ModelSerializer):
     image = serializers.ImageField(allow_null=True)
 
     class Meta:
-        model = Tweet
+        model = Post
         fields = '__all__'

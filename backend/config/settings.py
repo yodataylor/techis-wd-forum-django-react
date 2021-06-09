@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.tweets',
+    'apps.posts',
     'cloudinary',
     'django_filters',
 ]

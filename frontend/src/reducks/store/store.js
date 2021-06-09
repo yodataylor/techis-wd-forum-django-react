@@ -7,13 +7,13 @@ import {
 import {connectRouter, routerMiddleware} from "connected-react-router";
 import thunk from 'redux-thunk';
 
-import {TweetsReducer} from '../tweets/reducers';
+import {PostsReducer} from '../posts/reducers';
 
 export default function createStore(history) {
     return reduxCreateStore(
         combineReducers({
             router: connectRouter(history),
-            tweets: TweetsReducer,
+            posts: PostsReducer,
        }),
        compose(
         applyMiddleware(

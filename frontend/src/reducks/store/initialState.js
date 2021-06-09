@@ -1,5 +1,5 @@
 const initialState = { 
-    tweets: {
+    posts: {
         list: []
     }
 };
