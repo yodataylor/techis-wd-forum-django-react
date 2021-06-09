@@ -1,7 +1,7 @@
-# Twitter Clone in React & Redux + Django
+# Forum App in React & Redux + Django
 
 ```
-Twitter clone, with a frontend built in React & Redux and a backend built in Django API.
+Forum App, with a frontend built in React & Redux and a backend built in Django API.
 ```
 
 Check out [FRONTEND LIVE DEMO](https://twitter-prod-frontend.herokuapp.com/) here!!
@@ -20,7 +20,7 @@ Check out [API LIVE DEMO](https://twitter-prod-backend.herokuapp.com/) here!!
 1. Git Clone
 
 ```
-git clone git@github.com:Tech-i-s/techis-wd-twitter-django-react.git
+git clone git@github.com:Tech-i-s/techis-wd-forum-django-react.git
 ```
 
 2. Backend setting
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
-# Open http://127.0.0.1:8000/tweets/
+# Open http://127.0.0.1:8000/posts/
 ```
 
 3. Frontend setting
