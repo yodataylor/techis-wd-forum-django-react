@@ -31,8 +31,8 @@ export default class API {
         formData.append("name", name);
         formData.append("body", body);
         formData.append("image", image);
-        const savedPost = await axios 
-            .post(baseURL + "/posts/add/", formData)
+        const savedPost = await api
+            .post("/posts/add/", formData)
             .then((response) => {
                 return response.data
             })

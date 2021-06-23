@@ -23,31 +23,3 @@ class PostDetail(generics.RetrieveAPIView, generics.UpdateAPIView):
 class PostDelete(generics.DestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-
-
-def postLikeAdd(request, post_id):
-    # Get requested post
-    post = Post.objects.get(id=post_id)
-
-    # Add count
-    new_like_count = post.like_count + 1
-    post.like_count = new_like_count
-
-    # Save
-    post.save()
-
-    return JsonResponse({'result': 'successful'})
-
-
-def postLikeSubtract(request, post_id):
-    # Get requested post
-    post = Post.objects.get(id=post_id)
-
-    # Subtract count
-    new_like_count = post.like_count - 1
-    post.like_count = new_like_count
-
-    # Save
-    post.save()
-
-    return JsonResponse({'result': 'successful'})
