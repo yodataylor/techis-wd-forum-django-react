@@ -4,9 +4,9 @@
 Forum App, with a frontend built in React & Redux and a backend built in Django API.
 ```
 
-Check out [FRONTEND LIVE DEMO](https://twitter-prod-frontend.herokuapp.com/) here!!
+Check out [FRONTEND LIVE DEMO](https://forum-prod-frontend.herokuapp.com/) here!!
 
-Check out [API LIVE DEMO](https://twitter-prod-backend.herokuapp.com/) here!!
+Check out [API LIVE DEMO](https://forum-prod-api.herokuapp.com/) here!!
 
 ## Tech used
 
@@ -45,7 +45,3 @@ npm install
 npm start
 # Open http://127.0.0.1:3000/
 ```
-
-## Database Specification File
-
-[https://docs.google.com/spreadsheets/d/1XEt4aodcAZVcmpCnKI-e6B_u9UQ50pqTVSRAVYWgAsc/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1XEt4aodcAZVcmpCnKI-e6B_u9UQ50pqTVSRAVYWgAsc/edit?usp=sharing)
