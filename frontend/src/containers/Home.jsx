@@ -19,20 +19,31 @@ const Home = () => {
         // eslint-disable-next-line
     }, []);
 
+    // Infinite Scroll Pagination Flow
     const observer = useRef();
+
+    // Reference to a very last post element
     const lastPostElement = useCallback(
         node => {
+            if (isLoading) return;
+            // Disconnect reference from previous element, so that new last element is hook up correctly
             if (observer.current) {
                 observer.current.disconnect();
             }
+
+            // Observe changes in the intersection of target element
             observer.current = new IntersectionObserver(async entries => {
+                // That means that we are on the page somewhere, In our case last element of the page
                 if (entries[0].isIntersecting && posts.next) {
+                    // Proceed fetch new page
                     setIsLoading(true);
                     setPage(++page);
                     await dispatch(fetchPosts({ page }));
                     setIsLoading(false);
                 }
             });
+
+            // Reconnect back with the new last post element
             if (node) {
                 observer.current.observe(node);
             }
