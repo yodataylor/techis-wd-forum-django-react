@@ -1,7 +1,10 @@
-const initialState = { 
+const initialState = {
     posts: {
-        list: []
+        results: [],
+        count: 0,
+        next: null,
+        previous: null
     }
 };
 
-export default initialState
+export default initialState;
