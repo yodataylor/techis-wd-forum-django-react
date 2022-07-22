@@ -1,19 +1,22 @@
-import { createStore as reduxCreateStore, combineReducers, applyMiddleware, compose } from 'redux';
-import { connectRouter, routerMiddleware } from 'connected-react-router';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { logger } from 'redux-logger';
 import thunk from 'redux-thunk';
 
 import { PostsReducer } from '../posts/reducers';
 
-export default function createStore(history) {
-    return reduxCreateStore(
-        combineReducers({
-            router: connectRouter(history),
-            posts: PostsReducer
-        }),
-        compose(
-            applyMiddleware(routerMiddleware(history), thunk)
-            // DEBUG MODE
-            // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-        )
-    );
+const rootReducer = combineReducers({
+    posts: PostsReducer
+});
+
+export default function configureStore(preloadedState) {
+    const middlewares = [logger, thunk];
+    const middlewareEnhancer = applyMiddleware(...middlewares);
+
+    const enhancers = [middlewareEnhancer];
+    const composedEnhancers = composeWithDevTools(...enhancers);
+
+    const store = createStore(rootReducer, preloadedState, composedEnhancers);
+
+    return store;
 }
