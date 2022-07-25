@@ -32,35 +32,33 @@ api.interceptors.request.use(
 );
 
 export default class API {
-    getPosts = params => {
-        return api
-            .get('/posts/', { params })
-            .then(response => {
-                return response.data;
-            })
-            .catch(error => {
-                throw new Error(error);
-            });
+    getPosts = async params => {
+        try {
+            const response = await api.get('/posts/', { params });
+            return response.data;
+        } catch (error) {
+            throw new Error(error);
+        }
     };
-    addPost = postBody => {
+    addPost = async postBody => {
         const formData = new FormData();
 
         for (const key in postBody) {
             formData.append(key, postBody[key]);
         }
 
-        return api
-            .post('/posts/add/', formData)
-            .then(response => {
-                return response.data;
-            })
-            .catch(error => {
-                throw new Error(error);
-            });
-    };
-    deletePost = id => {
-        return api.delete(`/posts/delete/${id}/`).catch(error => {
+        try {
+            const response = await api.post('/posts/add/', formData);
+            return response.data;
+        } catch (error) {
             throw new Error(error);
-        });
+        }
+    };
+    deletePost = async id => {
+        try {
+            return await api.delete(`/posts/delete/${id}/`);
+        } catch (error) {
+            throw new Error(error);
+        }
     };
 }
