@@ -1,9 +1,8 @@
-import React from 'react';
-import IconUser from '../../assets/img/user-icon.jpg';
-import IconSmallMenu from '../../assets/img/icon-small-menu.svg';
-import { deletePost } from '../../reducks/posts/operations';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import IconSmallMenu from '../../assets/img/icon-small-menu.svg';
+import IconUser from '../../assets/img/user-icon.jpg';
+import { deletePost } from '../../reducks/posts/operations';
 
 const Post = React.forwardRef((props, ref) => {
     const { post } = props;
