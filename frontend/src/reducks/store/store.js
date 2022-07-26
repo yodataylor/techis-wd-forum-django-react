@@ -1,4 +1,4 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { applyMiddleware, combineReducers, configureStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { logger } from 'redux-logger';
 import thunk from 'redux-thunk';
@@ -9,14 +9,14 @@ const rootReducer = combineReducers({
     posts: PostsReducer
 });
 
-export default function configureStore(preloadedState) {
+export default function configureStores(preloadedState) {
     const middlewares = [logger, thunk];
     const middlewareEnhancer = applyMiddleware(...middlewares);
 
     const enhancers = [middlewareEnhancer];
     const composedEnhancers = composeWithDevTools(...enhancers);
 
-    const store = createStore(rootReducer, preloadedState, composedEnhancers);
+    const store = configureStore(rootReducer, preloadedState, composedEnhancers);
 
     return store;
 }
