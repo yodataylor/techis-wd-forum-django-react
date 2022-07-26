@@ -9,13 +9,13 @@ import reportWebVitals from './reportWebVitals';
 /* const history = History.createBrowserHistory();
 export const store = createStore(history); */
 const store = configureStore();
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
     <Provider store={store}>
         <Router>
             <App />
         </Router>
-    </Provider>,
-    document.getElementById('root')
+    </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
