@@ -2,13 +2,13 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
-import configureStore from './reducks/store/store';
+import configureStores from './reducks/store/store';
 
 import reportWebVitals from './reportWebVitals';
 
 /* const history = History.createBrowserHistory();
 export const store = createStore(history); */
-const store = configureStore();
+const store = configureStores();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>
