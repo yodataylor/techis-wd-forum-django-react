@@ -2,12 +2,12 @@ import {
   applyMiddleware,
   combineReducers,
   legacycreateStore as configureStore,
-} from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { logger } from "redux-logger";
-import thunk from "redux-thunk";
+} from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { logger } from 'redux-logger';
+import thunk from 'redux-thunk';
 
-import { PostsReducer } from "../posts/reducers";
+import { PostsReducer } from '../posts/reducers';
 
 const rootReducer = combineReducers({
   posts: PostsReducer,
