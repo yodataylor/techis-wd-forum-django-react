@@ -1,7 +1,7 @@
 import {
   applyMiddleware,
   combineReducers,
-  legacycreateStore as configureStore,
+  createStore as configureStore,
 } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { logger } from 'redux-logger';
