@@ -6,11 +6,11 @@ Forum App, with a frontend built in React & Redux and a backend built in Django 
 
 ## Live Demo
 
-**This App uses a Heroku free plan, so I am afraid that it takes time to load the pages.**
+**This App uses a Replit free plan, so I am afraid that it takes time to load the pages.**
 
-Check out [FRONTEND LIVE DEMO](https://forum-prod-frontend.herokuapp.com/) here!!
+Check out [FRONTEND LIVE DEMO](https://techis-wd-forum-django-react-frontend.techisio.repl.co/) here!!
 
-Check out [API LIVE DEMO](https://forum-prod-api.herokuapp.com/) here!!
+Check out [API LIVE DEMO](https://techis-wd-forum-django-react-backend.techisio.repl.co/) here!!
 
 ## Tech used
 
@@ -41,7 +41,7 @@ python manage.py runserver
 # Open http://127.0.0.1:8000/posts/
 
 # To have dummy data for testing run:
-python manage.py fixtures/dummy-data.json
+python manage.py loaddata fixtures/dummy_post.json
 ```
 
 3. Frontend setting
