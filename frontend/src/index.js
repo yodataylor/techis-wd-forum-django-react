@@ -13,7 +13,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>
         <Router>
-            <App />
+            <App <button type="button" onclick="document.getElementById('Example').innerHTML = Date()">a Javascript Date and Time</button>
+<p id="Example"></p>
         </Router>
     </Provider>
 );
